@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Napobully Space</title>
+  <link rel="icon" type="image/png" href="images/icon.png" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <nav>
+  <div class="logo">
+    <a href="index.html">
+      <img src="images/logo.png" alt="Logo" class="navbar-logo" />
+    </a>
+  </div>
+  <ul>
+    <li onclick="showSection('videos')">Video</li>
+    <li onclick="showSection('posts')">Post</li>
+    <li onclick="showSection('me')">Contatti</li>
+  </ul>
+</nav>
+
+
+  <main>
+    <section id="videos" style="display: block;">
+      <h2>Video</h2>
+      <div id="seriesTabs" class="series-tabs"></div>
+      <div class="video-list" id="videoList"></div>
+    </section>
+
+    <section id="videoPlayer" style="display: none;">
+      <button onclick="backToVideos()" class="back-button">← Torna ai video</button>
+      <div class="video-page" id="videoPage">
+        <div id="videoFrame"></div>
+        <div class="video-info" id="videoInfo"></div>
+        <div class="video-link-card" id="videoLinkCard"></div>
+      </div>
+    </section>
+
+    <section id="posts" style="display: none;">
+      <h2>Post</h2>
+      <div class="post-list" id="postList"></div>
+    </section>
+
+    <section id="me" style="display: none;">
+      <h2>That's Me</h2>
+      <div class="me-card">
+        <img src="images/avatar.png" alt="Avatar" class="me-avatar">
+          <div class="me-info">
+            <h3>NapobulllyXIII</h3>
+            <p>Questo è il sito di NapobulllyXIII, costruito come archivio da condividere per pochi, presto altre modifiche...</p>
+          <div class="me-social">
+            <!-- <a href="https://www.facebook.com/mario.rossi" target="_blank">Facebook</a> -->
+            <a href="https://www.instagram.com/lessio._n" target="_blank">
+              <i class="fab fa-instagram"></i> Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

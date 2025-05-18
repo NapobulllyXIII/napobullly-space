@@ -1,0 +1,36 @@
+{
+  "videos": [
+    {
+      "id": "dQw4w9WgXcQ",
+      "title": "Episodio 1 - Serie 1",
+      "description": "Descrizione episodio 1 serie 1",
+      "thumbnail": "img/thumbs/serie1_ep1.jpg",
+      "series": "Serie 1",
+      "orientation": "horizontal"
+    },
+    {
+      "id": "3JZ_D3ELwOQ",
+      "title": "Episodio 2 - Serie 1",
+      "description": "Descrizione episodio 2 serie 1",
+      "thumbnail": "img/thumbs/serie1_ep2.jpg",
+      "series": "Serie 1",
+      "orientation": "horizontal"
+    },
+    {
+      "id": "L_jWHffIx5E",
+      "title": "Episodio 1 - Serie 2",
+      "description": "Descrizione episodio 1 serie 2",
+      "thumbnail": "img/thumbs/serie2_ep1.jpg",
+      "series": "Serie 2",
+      "orientation": "vertical"
+    },
+    {
+      "id": "2vjPBrBU-TM",
+      "title": "Episodio 2 - Serie 2",
+      "description": "Descrizione episodio 2 serie 2",
+      "thumbnail": "img/thumbs/serie2_ep2.jpg",
+      "series": "Serie 2",
+      "orientation": "vertical"
+    }
+  ]
+}

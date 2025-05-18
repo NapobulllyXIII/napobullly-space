@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Video di NapobulllyXIII</title>
+  <link rel="icon" type="image/png" href="images/icon.png" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <nav>
+  <div class="logo">
+    <a href="index.html">
+      <img src="images/logo.png" alt="Logo" class="navbar-logo" />
+    </a>
+  </div>
+  <ul>
+    <li onclick="showSection('videos')">Video</li>
+    <li onclick="showSection('posts')">Post</li>
+    <li onclick="showSection('contatti')">Contatti</li>
+  </ul>
+</nav>
+
+  <main class="video-page">
+    <div id="videoContainer" class="video-container">
+      <iframe
+        id="videoFrame"
+        allowfullscreen
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        frameborder="0"
+      ></iframe>
+
+      <div id="videoInfo" class="video-info-card">
+        <h2 id="videoTitle"></h2>
+        <p id="videoDesc"></p>
+      </div>
+      <!-- <div id="videoInfo" class="video-info-card">
+        <h4> Se hai problemi a visualizzare il video, <a href="https://google.com" >clicca qui... </a></h4>
+        <p id="videoDesc"></p>
+      </div> -->
+    </div>
+  </main>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const videoId = urlParams.get("id");
+    const title = urlParams.get("title") || "Video";
+    const desc = urlParams.get("desc") || "";
+    const orientation = urlParams.get("orientation") || "horizontal"; // default
+
+    document.getElementById("videoFrame").src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+    document.getElementById("videoTitle").innerText = title;
+    document.getElementById("videoDesc").innerText = decodeURIComponent(desc);
+
+    const videoContainer = document.getElementById("videoContainer");
+    if (orientation === "vertical") {
+      videoContainer.classList.add("vertical");
+    } else {
+      videoContainer.classList.remove("vertical");
+    }
+  </script>
+</body>
+</html>
