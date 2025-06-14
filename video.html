@@ -15,31 +15,58 @@
     </a>
   </div>
   <ul>
-    <li onclick="showSection('videos')">Video</li>
-    <li onclick="showSection('posts')">Post</li>
-    <li onclick="showSection('contatti')">Contatti</li>
+    <!-- <li onclick="window.location.href='index.html'">Home</li> da aggiungere se la home sarà diversa -->
+      <li onclick="window.location.href='index.html#videos'">Video</li>
+      <li onclick="window.location.href='index.html#posts'">Post</li>
+      <li onclick="window.location.href='index.html#contatti'">Contatti</li>
   </ul>
 </nav>
 
   <main class="video-page">
-    <div id="videoContainer" class="video-container">
-      <iframe
-        id="videoFrame"
-        allowfullscreen
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        frameborder="0"
-      ></iframe>
+  
+    <a  class="return-to-videos" href="index.html">← Torna ai video</a>
+  
+    <div class="video-main-layout">
+    
+    <!-- Colonna sinistra: Video -->
+           
 
-      <div id="videoInfo" class="video-info-card">
+    <div class="video-left">
+      <div class="video-container">
+        <iframe
+          id="videoFrame"
+          allowfullscreen
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          frameborder="0"
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- Colonna centrale: Descrizione -->
+    <div class="video-description">
+      <div class="video-info-card">
         <h2 id="videoTitle"></h2>
         <p id="videoDesc"></p>
       </div>
-      <!-- <div id="videoInfo" class="video-info-card">
-        <h4> Se hai problemi a visualizzare il video, <a href="https://google.com" >clicca qui... </a></h4>
-        <p id="videoDesc"></p>
+      
+  <!--<div class="video-info-card">
+        <h4>
+          Se hai problemi a visualizzare il video, 
+          <a id="backupLink" target="_blank">clicca qui...</a>
+        </h4>
       </div> -->
     </div>
-  </main>
+
+    <!-- Colonna destra: Video correlati -->
+    <aside class="related-videos" id="relatedVideos">
+      <h3>Altri video della serie</h3>
+      <div id="relatedList"></div>
+    </aside>
+
+  </div>
+</main>
+
+  <!-- <script> src = "js/video.js" </script> -->
 
   <script>
     const urlParams = new URLSearchParams(window.location.search);
@@ -58,6 +85,32 @@
     } else {
       videoContainer.classList.remove("vertical");
     }
+
+    function loadRelatedVideos(seriesName, currentVideoId) {
+  const relatedContainer = document.getElementById('relatedList');
+  relatedContainer.innerHTML = '';
+
+  const seriesVideos = allVideos[seriesName] || [];
+
+  seriesVideos.forEach(video => {
+    if (video.id !== currentVideoId) {
+      const div = document.createElement('div');
+      div.className = 'related-video-item';
+      div.onclick = () => {
+        window.location.href = `video.html?id=${video.id}`;
+      };
+
+      div.innerHTML = `
+        <img src="${video.thumbnail}" alt="${video.title}" />
+        <div class="related-title">${video.title}</div>
+      `;
+
+      relatedContainer.appendChild(div);
+    }
+  });
+}
+
   </script>
+  
 </body>
 </html>
