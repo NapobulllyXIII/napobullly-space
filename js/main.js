@@ -28,8 +28,7 @@ const series = {
 };
 
 const posts = [
-  { title: "Benvenuto nel mio sito", content: "Questo è un post di benvenuto al mio sito personalizzato." },
-  { title: "Novità e altro ancora", content: "Il sito web è ancora in costruzione, ci saranno novità prossimamente" }
+  { title: "Modifiche grafiche (15/06/25)", content: "Sono state apportate delle modifiche grafiche alla pagina che visualizza i video." }
 ];
 
 function loadSeriesTabs() {
